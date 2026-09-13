@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: margin-notes
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
