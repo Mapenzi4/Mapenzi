@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margin — quick notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <h1>Margin</h1>
+      <p class="subtitle">Jot a line before it slips your mind.</p>
+    </header>
+
+    <form id="note-form" class="entry-form">
+      <textarea id="note-text" rows="2" placeholder="Write something down…" required></textarea>
+      <button type="submit">Add to the margin</button>
+    </form>
+
+    <section id="notes-list" class="notes-list" aria-live="polite">
+      <p class="empty-state">Nothing here yet — your first note will show up below.</p>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

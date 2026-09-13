@@ -1,0 +1,138 @@
+:root {
+  --paper: #F6F3EA;
+  --ink: #26241F;
+  --ink-soft: #59564C;
+  --rule: #D9D2BF;
+  --ochre: #B4791E;
+  --moss: #4B5D45;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.page-header h1 {
+  font-size: 2.75rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  color: var(--ink-soft);
+  margin: 0.35rem 0 2.5rem;
+  font-size: 1.05rem;
+}
+
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem 0;
+  margin-bottom: 2.5rem;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  resize: vertical;
+  padding: 0;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #9A9484;
+}
+
+.entry-form button {
+  align-self: flex-start;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--paper);
+  background: var(--ink);
+  border: none;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.entry-form button:hover { background: var(--ochre); }
+.entry-form button:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.note {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.note-meta {
+  flex-shrink: 0;
+  width: 5.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--moss);
+  padding-top: 0.15rem;
+}
+
+.note-text {
+  flex: 1;
+  margin: 0;
+  font-size: 1.05rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.note-delete {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  cursor: pointer;
+  padding: 0.15rem 0;
+}
+
+.note-delete:hover { color: var(--ochre); }
+
+.empty-state {
+  color: var(--ink-soft);
+  font-style: italic;
+  padding: 1.5rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+@media (max-width: 480px) {
+  .page { padding: 2.5rem 1.25rem 3rem; }
+  .page-header h1 { font-size: 2.2rem; }
+  .note { flex-direction: column; gap: 0.35rem; }
+  .note-meta { width: auto; }
+}
